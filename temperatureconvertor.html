@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Temperature Convertor</title>
+    <style>
+    body{
+      background-color:#f7f8fa;   
+    }
+    .main-continer{
+        background-image: url(temperatureimg.png);
+        background-position-x: -23px;
+        background-position-y: -68px;
+        background-size: cover;
+        margin-top: -21px;
+        height:99vh;
+}
+    h3{
+        color: #92949aa3;
+        font-size: 20px;
+        word-spacing: 5px;
+        text-align: center;
+        letter-spacing: 3px;
+
+    }
+    input{
+        width: 200px;
+        height: 45px;
+        text-align: center;
+        font-size: 17px;
+        border-radius: 5px;
+    border: 1px solid lightblue;
+    box-shadow: 1px 1px 3px 0px lightblue;
+    color:#b7bdca;
+}
+button{
+    position:relative;
+    width: 143px;
+    height: 45px;
+    margin-left: 25px;
+    background-color: #5ba3ef;
+    border:1px solid #5ba3ef;
+    color:#fefffa;
+    border-radius:5px;
+    font-size:15px;
+    font-weight: bold;
+    
+}
+
+    .convertor {
+    width: 210px;
+    height: 328px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+   
+
+}
+    ::placeholder{
+        color:#d6dbe6;
+    }
+.btn{
+    position: relative;
+    overflow: hidden;
+}
+   button::before{
+    content: 'Click Me';
+    position: absolute;
+    top: -2px;
+    left: -1px;
+    width: 143px;
+    height: 46px;
+    background-color:lightskyblue;
+    border-radius: 5px;
+    transform: translateY(-46px);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    font-size:16px;
+    
+
+   }
+   button:hover::before{
+   transform: translateY(0px);
+    transition: all 1.2s ease-in; /* addition efftect can be come by making opacity=0.5  and remove flex*/ 
+
+   }
+    </style>
+</head>
+<body>
+    <div class="main-continer">
+        <h3>Fahrenheit to Celsius Conversion</h3>
+        <div class="convertor">
+         <input type="text" id="first" placeholder="Enter Temperature" required > 
+         <div class="btn">
+         <button onclick="convert()"> Convert</button>
+         <div class="overlay"><h5></h5></div>
+        </div>
+         <input type="text" id="second" placeholder="Enter Temperature" required > 
+    </div>
+                </div>
+    <script>
+         
+       const convert=()=>{
+           let fartemp=document.getElementById("first").value
+           let celtemp= (fartemp-32)*(5/9);
+           document.getElementById("second").value=celtemp; 
+                
+           
+      }
+
+     </script>
+
+</body>
+</html>
